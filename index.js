@@ -1,9 +1,14 @@
 const fs = require('fs');
 
-fs.readFile('danki.txt', (err, data) => {
-    let str = data.toString();
+// fs.unlink('danki.txt', (err) => {
+//     console.log('Arquivo deletado com sucesso!');
+// });
 
-    let array = str.split("/");
+// fs.writeFile('dankicode.txt', 'Conteúdo Primário', (err) => {
+//     console.log('Arquivo .txt criado com sucesso!');
+// });
 
-    console.log(array);
-})
+fs.rename('dankicode.txt', 'danki.txt', (err) => {
+    if (err) throw err;
+    console.log('Arquivo renomeado com sucesso!');
+});
