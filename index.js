@@ -1,14 +1,23 @@
-const fs = require('fs');
+const readline = require('readline');
 
-// fs.unlink('danki.txt', (err) => {
-//     console.log('Arquivo deletado com sucesso!');
-// });
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-// fs.writeFile('dankicode.txt', 'Conteúdo Primário', (err) => {
-//     console.log('Arquivo .txt criado com sucesso!');
-// });
+rl.question('Qual é o seu nome?', (name) => {
+    console.log(`Prazer em lhe conhecer, ${name}, eu sou o Node.js.`);
+    rl.question('Quantos anos você tem?', (age) => {
+        let nodeAge = ((new Date).getFullYear() - 2009)
+        if (age > nodeAge) {
+            console.log(`Uau! Eu tenho apenas ${nodeAge} anos...`);
+        } else {
+            console.log(`Nossa, você é muito novo, eu já tenho ${nodeAge} anos.`);
+        }
+    })
+});
 
-fs.rename('dankicode.txt', 'danki.txt', (err) => {
-    if (err) throw err;
-    console.log('Arquivo renomeado com sucesso!');
+rl.on('close', () => {
+    console.log('Até breve!');
+    process.exit(0);
 });
