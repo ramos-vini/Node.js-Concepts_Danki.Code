@@ -10,9 +10,9 @@ rl.question('Qual é o seu nome?', (name) => {
     rl.question('Quantos anos você tem?', (age) => {
         let nodeAge = ((new Date).getFullYear() - 2009)
         if (age > nodeAge) {
-            console.log(`Uau! Eu tenho apenas ${nodeAge} anos...`);
+            console.log(`Uau! Eu tenho apenas ${nodeAge} anos, me sinto novinho em folha!`);
         } else {
-            console.log(`Nossa, você é muito novo, eu já tenho ${nodeAge} anos.`);
+            console.log(`Nossa, você é muito novo, eu já tenho ${nodeAge} anos. Acho que estou ficando velho...`);
         }
     })
 });
